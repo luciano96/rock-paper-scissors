@@ -63,8 +63,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Montserrat", "sans-serif"],
-        serif: ["Fraunces", "serif"],
+        sans: ["Barlow Semi Condensed", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
