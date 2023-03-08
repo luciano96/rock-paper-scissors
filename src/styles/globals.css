@@ -7,3 +7,51 @@
     @apply w-auto;
   }
 }
+
+@layer components {
+  .scissors {
+    background-image: url("../../public/assets/icon-scissors.svg");
+    border: 12px solid theme("colors.primary.scissors.900");
+    border-radius: 50%;
+    -webkit-box-shadow: inset 0 6px rgba(0, 0, 0, 0.2),
+      0 6px theme("colors.primary.scissors.50");
+    box-shadow: inset 0 6px rgba(0, 0, 0, 0.2),
+      0 6px theme("colors.primary.scissors.50");
+    justify-self: start;
+    margin-left: 50px;
+  }
+  .rock {
+    background-image: url("../../public/assets/icon-rock.svg");
+    border: 12px solid theme("colors.primary.rock.900");
+    border-radius: 50%;
+    -webkit-box-shadow: inset 0 6px rgba(0, 0, 0, 0.2),
+      0 6px theme("colors.primary.rock.50");
+    box-shadow: inset 0 6px rgba(0, 0, 0, 0.2),
+      0 6px theme("colors.primary.rock.50");
+    @apply col-span-2;
+    align-self: start;
+    margin-top: 50px;
+  }
+
+  .paper {
+    background-image: url("../../public/assets/icon-paper.svg");
+    border: 12px solid theme("colors.primary.paper.900");
+    border-radius: 50%;
+    -webkit-box-shadow: inset 0 6px rgba(0, 0, 0, 0.2),
+      0 6px theme("colors.primary.paper.50");
+    box-shadow: inset 0 6px rgba(0, 0, 0, 0.2),
+      0 6px theme("colors.primary.paper.50");
+    justify-self: end;
+    margin-right: 50px;
+  }
+
+  .gamekey {
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    cursor: pointer;
+    width: 14rem;
+    height: 14rem;
+  }
+}

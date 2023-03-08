@@ -1,0 +1,11 @@
+import {{ pascalCase componentName }} from '../{{ pascalCase componentName }}';
+
+import '~/styles/globals.css';
+import 'tailwindcss/dist/tailwind.min.css'
+
+describe('<{{ pascalCase componentName }} />', () => {
+  it('should render correctly', () => {
+    cy.mount(<{{ pascalCase componentName }}>Click me!</{{ pascalCase componentName }}>)
+    cy.get('div').should('contains.text', 'Hello {{ pascalCase componentName }}')
+  });
+});

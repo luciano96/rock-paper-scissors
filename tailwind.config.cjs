@@ -67,6 +67,10 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        triangle: "url('/assets/bg-triangle.svg')",
+        rock: "url('/assets/icon-rock.svg')",
+        paper: "url('/assets/icon-paper.svg')",
+        scissors: "url('/assets/icon-scissors.svg')",
       },
     },
   },

@@ -1,0 +1,20 @@
+import type { FC } from 'react';
+
+import type { PropTypes } from './{{ pascalCase componentName }}.types';
+
+/**
+ * ## Usage
+ *
+ * ```js
+ * import {{ pascalCase componentName }} from '~/components/{{ kebabCase componentName }}';
+ *
+ * <{{ pascalCase componentName }} />
+ * ```
+ */
+const {{ pascalCase componentName }}: FC<PropTypes> = (props) => {
+  return (
+    <div>Hello {{ pascalCase componentName }}</div>
+  );
+};
+
+export default {{ pascalCase componentName }};
