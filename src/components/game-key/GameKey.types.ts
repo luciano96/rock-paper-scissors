@@ -1,9 +1,7 @@
-export enum Moves {
-  ROCK = "rock",
-  PAPER = "paper",
-  SCISSORS = "scissors",
-}
+export const Moves = ["rock", "paper", "scissors"] as const;
+export type MoveType = typeof Moves[number];
 
 export interface PropTypes {
-  moveKey: Moves;
+  moveKey: MoveType;
+  className?: string;
 }

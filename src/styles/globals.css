@@ -45,6 +45,15 @@
     margin-right: 50px;
   }
 
+  .skeleton {
+    border: 12px solid theme("colors.header-outline");
+    border-radius: 50%;
+    -webkit-box-shadow: inset 0 6px rgba(0, 0, 0, 0.2),
+      0 6px theme("colors.header-outline");
+    box-shadow: inset 0 6px rgba(0, 0, 0, 0.2),
+      0 6px theme("colors.header-outline");
+  }
+
   .gamekey {
     background-color: white;
     background-position: center;

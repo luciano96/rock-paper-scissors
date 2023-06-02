@@ -1,4 +1,3 @@
-import type { FC } from "react";
 import type { PropTypes } from "./GameKey.types";
 
 /**
@@ -10,13 +9,15 @@ import type { PropTypes } from "./GameKey.types";
  * <GameKey />
  * ```
  */
-const GameKey: FC<PropTypes> = ({ moveKey, className = "" }) => {
+const GameKeySkeleton: React.FC<Pick<PropTypes, "className">> = ({
+  className = '',
+}) => {
   return (
     <button
       type="button"
-      className={`${className} ${moveKey} gamekey rounded-full`}
+      className={`${className} skeleton gamekey rounded-full`}
     />
   );
 };
 
-export default GameKey;
+export default GameKeySkeleton;

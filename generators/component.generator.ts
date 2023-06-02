@@ -33,8 +33,8 @@ export default (plop: NodePlopAPI) => {
             },
             {
                 type: 'add',
-                path: `${destinationPath}/__tests__/{{pascalCase componentName}}.test.tsx`,
-                templateFile: `${componentTemplatesPath}/cy.tsx.hbs`,
+                path: `${destinationPath}/__tests__/{{pascalCase componentName}}.cy.tsx`,
+                templateFile: `${componentTemplatesPath}/test.tsx.hbs`,
             },
         ],
     });
