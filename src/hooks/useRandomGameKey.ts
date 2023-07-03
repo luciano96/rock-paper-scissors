@@ -11,15 +11,17 @@ const useRandomGameKey = (callback: (housePicked: MoveType) => void) => {
     let sceneTimer: NodeJS.Timeout;
     const timer = setTimeout(() => {
       const randomIndex = Math.floor(Math.random() * Moves.length);
-      const randomKey = Moves[randomIndex] ?? 'paper';
+      const randomKey = Moves[randomIndex] ?? "paper";
       setGameKey(randomKey);
 
-      sceneTimer = setTimeout(() => callback(randomKey), 1000);
+      sceneTimer = setTimeout(() => {
+        callback(randomKey);
+      }, 1500);
     }, 2000);
 
     return () => {
       clearTimeout(timer);
-      clearTimeout(sceneTimer)
+      clearTimeout(sceneTimer);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

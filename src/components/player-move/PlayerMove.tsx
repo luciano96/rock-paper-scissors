@@ -2,6 +2,7 @@ import type { FC } from "react";
 
 import type { PropTypes } from "./PlayerMove.types";
 import GameKey from "../game-key";
+import Move from "../move/Move";
 
 /**
  * ## Usage
@@ -12,12 +13,11 @@ import GameKey from "../game-key";
  * <PlayerMove />
  * ```
  */
-const PlayerMove: FC<PropTypes> = ({ gameKey }) => {
+const PlayerMove: FC<PropTypes> = ({ gameKey, isWin = false }) => {
   return (
-    <>
-      <p className="text-gray-50">YOU PICKED</p>
-      <GameKey className="pl-4" moveKey={gameKey} />
-    </>
+    <Move text={"YOU PICKED"} isWin={isWin}>
+      <GameKey className="pl-4" moveKey={gameKey}/>
+    </Move>
   );
 };
 

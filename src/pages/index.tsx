@@ -9,7 +9,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Rock Paper Scissors</title>
       </Head>
-      <main className="bg-yellow bg-radial flex min-h-screen flex-col items-center justify-center bg-gradient-radial from-background-50 to-background-900 p-14">
+      <main className="bg-yellow bg-radial flex min-h-screen flex-col items-center justify-start gap-56 bg-gradient-radial from-background-50 to-background-900 p-14">
         <ScoreBoard />
         <SceneRendered />
       </main>

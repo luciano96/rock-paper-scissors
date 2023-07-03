@@ -3,6 +3,7 @@ import type { FC } from "react";
 import type { PropTypes } from "./HouseMove.types";
 import { GameKeySkeleton } from "../game-key";
 import GameKey from "../game-key/GameKey";
+import Move from "../move/Move";
 
 /**
  * ## Usage
@@ -13,16 +14,16 @@ import GameKey from "../game-key/GameKey";
  * <HouseMove />
  * ```
  */
-const HouseMove: FC<PropTypes> = ({ gameKey }) => {
+const HouseMove: FC<PropTypes> = ({ gameKey, isWin = false }) => {
+  const text = gameKey ? "THE HOUSE PICKED" : "THE HOUSE IS PICKING";
   return (
-    <>
-      <p className="text-gray-50">THE HOUSE PICKED</p>
+    <Move text={text} isWin={isWin}>
       {gameKey ? (
-        <GameKey moveKey={gameKey} />
+        <GameKey className="pl-4" moveKey={gameKey} />
       ) : (
         <GameKeySkeleton className="pl-4" />
       )}
-    </>
+    </Move>
   );
 };
 

@@ -1,8 +1,8 @@
 import { useState, type FC, useEffect } from "react";
 import useSceneSwitcher from "~/hooks/useSceneSwitcher";
 import Scene1 from "../scene1/Scene1";
-import Scene3 from "../scene3/Scene3";
 import Scene2 from "../scene2/Scene2";
+import Scene3 from "../scene3/Scene3";
 import type { MoveType } from "../game-key/GameKey.types";
 import useGameResultCalculator, {
   type GameResultType,
@@ -52,6 +52,8 @@ const SceneRendered: FC = () => {
             getNextScene={getNextScene}
             result={result}
             resetMoves={resetMoves}
+            playerMove={playerMove as MoveType}
+            houseMove={houseMove as MoveType}
           />
         );
       }

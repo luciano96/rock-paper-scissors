@@ -19,7 +19,7 @@ const Scene1: FC<CommonSceneProps> = ({ getNextScene, setPlayerMove }) => {
   };
 
   return (
-    <div className="grid w-full flex-1 grid-cols-2 items-center justify-items-center bg-triangle bg-center bg-no-repeat">
+    <div id="scene1" className="grid w-full flex-1 grid-cols-2 items-center justify-items-center bg-triangle bg-center bg-no-repeat">
       <GameKey moveKey={"paper"} onClick={onClickHandler} />
       <GameKey moveKey={"scissors"} onClick={onClickHandler} />
       <GameKey moveKey={"rock"} onClick={onClickHandler} />

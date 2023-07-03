@@ -1,5 +1,6 @@
 import type { MoveType } from "../game-key/GameKey.types";
-
-export interface PropTypes {
+import type { PropTypes as GenericMoveTypes } from "../move/Move.types";
+export interface PropTypes  extends Pick<GenericMoveTypes, "isWin"> {
+    className?: string;
     gameKey: MoveType | null;
 }

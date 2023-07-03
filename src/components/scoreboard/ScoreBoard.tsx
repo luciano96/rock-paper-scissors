@@ -44,7 +44,7 @@ const Scoreboard: FC<PropsWithChildren> = () => {
   const { state = { score: 0, totalMatches: 0 } } = useScoreContext() ?? {};
 
   return (
-    <div className="flex w-full justify-between rounded-lg border-2 border-header-outline bg-transparent p-4 text-gray-50">
+    <div className="flex w-5/6 justify-between rounded-lg border-2 border-header-outline bg-transparent p-4 text-gray-50">
       <Image
         priority
         data-cy="logo"

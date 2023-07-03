@@ -10,7 +10,7 @@ import type { PropTypes } from "./GameKey.types";
  * <GameKey />
  * ```
  */
-const GameKey: FC<PropTypes> = ({ moveKey, className = "", onClick }) => {
+const GameKey: FC<PropTypes> = ({ moveKey, className = "", onClick}) => {
   const handler = () => {
     onClick?.(moveKey);
   };

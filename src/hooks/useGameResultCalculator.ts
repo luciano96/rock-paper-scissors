@@ -12,7 +12,6 @@ const useGameResultCalculator = () => {
     houseMove: MoveType | null
   ) => GameResultType = useCallback(
     (playerMove: MoveType | null, houseMove: MoveType | null) => {
-      console.log("Hi");
       scoreContext?.addMatch();
       if (
         (playerMove === "rock" && houseMove === "scissors") ||

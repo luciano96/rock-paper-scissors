@@ -1,28 +1,93 @@
-# Create T3 App
+# Rock, Paper, Scissors game
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+The idea for this project came from the [**Frontend Mentor**](https://www.frontendmentor.io/) website.
 
-## What's next? How do I make an app with this?
+## Table of Contents
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- [Overview](#overview)
+  - [Links](#links)
+- [Built with](#built-with)
+- [What I Learned](#what-i-learned)
+- [Continued Development](#continued-development)
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Overview
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+Users should be able to, play Rock, Paper, Scissors against the computer and see what is their score.
 
-## Learn More
+### Links
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+- Live Site URL: [TBD](http://random.cat)
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+### Built with
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+- [T3-Stack](https://create.t3.gg/)
 
-## How do I deploy this?
+### What I learned
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+The main thing I learned from this challenge was to add rippling effect to a span. I also played around with a hook to choose the computer move using several `setTimeout` functions
+
+The animatino in question:
+
+```css
+.ripple-span {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid hsl(217, 16%, 45%);
+  background-color: hsl(217, 16%, 45%);
+  pointer-events: none;
+  animation: rippleEffect 3s linear infinite;
+  animation-delay: calc(0.5s * var(--ripple-delay));
+  z-index: -1;
+}
+
+@keyframes rippleEffect {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}
+```
+
+```ts
+const useRandomGameKey = (callback: (housePicked: MoveType) => void) => {
+  const [gameKey, setGameKey] = useState<MoveType | null>(null);
+
+  useEffect(() => {
+    let sceneTimer: NodeJS.Timeout;
+    const timer = setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * Moves.length);
+      const randomKey = Moves[randomIndex] ?? "paper";
+      setGameKey(randomKey);
+
+      sceneTimer = setTimeout(() => {
+        callback(randomKey);
+      }, 1500);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(sceneTimer);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return gameKey;
+};
+```
+
+### Continued development
+
+Things that are still missing:
+
+- make the website responsive for mobile
+- add cypress tests to project

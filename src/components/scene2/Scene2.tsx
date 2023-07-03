@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { type FC } from "react";
 
 import type { PropTypes } from "./Scene2.types";
 import PlayerMove from "../player-move/PlayerMove";
@@ -24,11 +24,14 @@ const Scene2: FC<PropTypes> = ({ gameKey, getNextScene, setHouseMove }) => {
   const housePicked = useRandomGameKey(afterHousePicked);
 
   return (
-    <div className="flex h-full w-full flex-1 justify-around">
-      <div className="flex flex-col items-center justify-evenly">
+    <div
+      id="scene2"
+      className="flex h-full w-full justify-center gap-40 [--key-margin-right:0px]"
+    >
+      <div className="gamekey_container">
         <PlayerMove gameKey={gameKey} />
       </div>
-      <div className="flex flex-col items-center justify-evenly">
+      <div className="gamekey_container">
         <HouseMove gameKey={housePicked} />
       </div>
     </div>
