@@ -16,7 +16,7 @@ Users should be able to, play Rock, Paper, Scissors against the computer and see
 
 ### Links
 
-- Live Site URL: [TBD](http://random.cat)
+- Live Site URL: [Rock-Paper-Scissors](https://rock-paper-scissors-luciano96.vercel.app/)
 
 ### Built with
 
@@ -90,4 +90,5 @@ const useRandomGameKey = (callback: (housePicked: MoveType) => void) => {
 Things that are still missing:
 
 - make the website responsive for mobile
+- add modal with rules
 - add cypress tests to project
