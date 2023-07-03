@@ -19,7 +19,7 @@ const GameKey: FC<PropTypes> = ({ moveKey, className = "", onClick}) => {
     <button
       onClick={handler}
       type="button"
-      className={`${className} ${moveKey} gamekey rounded-full`}
+      className={`${className} ${moveKey} gamekey desktop:w-56 desktop:h-56 rounded-full`}
     />
   );
 };

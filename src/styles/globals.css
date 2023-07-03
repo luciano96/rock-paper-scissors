@@ -55,6 +55,7 @@
     justify-self: start;
     margin-left: var(--key-margin-right);
   }
+
   .rock {
     background-image: url("../../public/assets/icon-rock.svg");
     border: 12px solid theme("colors.primary.rock.900");
@@ -95,11 +96,6 @@
     background-repeat: no-repeat;
     background-size: 50%;
     cursor: pointer;
-    width: 14rem;
-    height: 14rem;
-  }
-
-  #scene2 {
-    margin-right: 0;
+    @apply w-32 h-32;
   }
 }
