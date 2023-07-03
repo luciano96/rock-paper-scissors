@@ -4,4 +4,5 @@ export type MoveType = typeof Moves[number];
 export interface PropTypes {
   moveKey: MoveType;
   className?: string;
+  onClick?: (moveType: MoveType) => void;
 }

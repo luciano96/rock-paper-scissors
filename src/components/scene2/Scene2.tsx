@@ -1,0 +1,38 @@
+import type { FC } from "react";
+
+import type { PropTypes } from "./Scene2.types";
+import PlayerMove from "../player-move/PlayerMove";
+import HouseMove from "../house-move/HouseMove";
+import useRandomGameKey from "~/hooks/useRandomGameKey";
+import type { MoveType } from "../game-key/GameKey.types";
+
+/**
+ * ## Usage
+ *
+ * ```js
+ * import Scene2 from '~/components/scene2';
+ *
+ * <Scene2 />
+ * ```
+ */
+const Scene2: FC<PropTypes> = ({ gameKey, getNextScene, setHouseMove }) => {
+  const afterHousePicked = (houseMove: MoveType) => {
+    setHouseMove?.(houseMove);
+    getNextScene();
+  };
+
+  const housePicked = useRandomGameKey(afterHousePicked);
+
+  return (
+    <div className="flex h-full w-full flex-1 justify-around">
+      <div className="flex flex-col items-center justify-evenly">
+        <PlayerMove gameKey={gameKey} />
+      </div>
+      <div className="flex flex-col items-center justify-evenly">
+        <HouseMove gameKey={housePicked} />
+      </div>
+    </div>
+  );
+};
+
+export default Scene2;

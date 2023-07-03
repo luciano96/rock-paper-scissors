@@ -10,9 +10,14 @@ import type { PropTypes } from "./GameKey.types";
  * <GameKey />
  * ```
  */
-const GameKey: FC<PropTypes> = ({ moveKey, className = "" }) => {
+const GameKey: FC<PropTypes> = ({ moveKey, className = "", onClick }) => {
+  const handler = () => {
+    onClick?.(moveKey);
+  };
+
   return (
     <button
+      onClick={handler}
       type="button"
       className={`${className} ${moveKey} gamekey rounded-full`}
     />
