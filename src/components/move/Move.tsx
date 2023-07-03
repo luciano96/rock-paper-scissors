@@ -3,12 +3,6 @@ import type { FC, PropsWithChildren } from "react";
 import type { PropTypes } from "./Move.types";
 import clsx from "clsx";
 
-const rippleClassNameBuilder = (isWin: boolean) => (i: string) => {
-  return `[--ripple-delay:${i}] ` + clsx({
-    "ripple-span": isWin,
-  });
-};
-
 /**
  * ## Usage
  *
@@ -23,17 +17,27 @@ const Move: FC<PropsWithChildren<PropTypes>> = ({
   text,
   isWin = false,
 }) => {
-  const classNameBuilder = rippleClassNameBuilder(isWin);
-
   return (
     <>
       <p className="w-full text-center text-4xl text-gray-50">{text}</p>
-      <div className={`flex items-center justify-center ${clsx({})}`}>
+      <div className={`flex items-center justify-center`}>
         {isWin && (
           <>
-            <span className={classNameBuilder('0')} />
-            <span className={classNameBuilder('1')} />
-            <span className={classNameBuilder('2')} />
+            <span
+              className={clsx(`[--ripple-delay:0]`, {
+                "ripple-span": isWin,
+              })}
+            />
+            <span
+              className={clsx(`[--ripple-delay:1]`, {
+                "ripple-span": isWin,
+              })}
+            />
+            <span
+              className={clsx(`[--ripple-delay:2]`, {
+                "ripple-span": isWin,
+              })}
+            />
           </>
         )}
         {children}
