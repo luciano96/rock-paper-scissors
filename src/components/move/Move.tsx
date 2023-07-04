@@ -19,8 +19,7 @@ const Move: FC<PropsWithChildren<PropTypes>> = ({
 }) => {
   return (
     <>
-      <p className="w-full text-center text-4xl text-gray-50">{text}</p>
-      <div className={`flex items-center justify-center`}>
+      <div className="flex items-center justify-center desktop:order-2">
         {isWin && (
           <>
             <span
@@ -42,6 +41,9 @@ const Move: FC<PropsWithChildren<PropTypes>> = ({
         )}
         {children}
       </div>
+      <p className="w-full text-center text-2xl desktop:text-4xl text-gray-50 desktop:order-1">
+        {text}
+      </p>
     </>
   );
 };

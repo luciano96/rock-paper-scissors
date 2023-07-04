@@ -10,12 +10,12 @@ import type { PropTypes } from "./GameKey.types";
  * ```
  */
 const GameKeySkeleton: React.FC<Pick<PropTypes, "className">> = ({
-  className = '',
+  className = "",
 }) => {
   return (
     <button
       type="button"
-      className={`${className} skeleton gamekey rounded-full`}
+      className={`${className} skeleton gamekey rounded-full desktop:h-56 desktop:w-56`}
     />
   );
 };
