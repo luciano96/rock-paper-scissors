@@ -9,7 +9,10 @@ const Home: NextPage = () => {
       <Head>
         <title>Rock Paper Scissors</title>
       </Head>
-      <main className="bg-yellow bg-radial overflow-x-hidden flex-col flex min-h-[100dvh] min-w-[100dvw] items-center justify-start gap-56 bg-gradient-radial from-background-50 to-background-900 p-14">
+      <main
+        className="bg-yellow bg-radial flex min-h-[100dvh] min-w-[100dvw] flex-col items-center justify-start
+       gap-20 overflow-x-hidden bg-gradient-radial from-background-50 to-background-900 py-10 px-5 desktop:gap-56 desktop:px-14 desktop:py-10"
+      >
         <ScoreBoard />
         <SceneRendered />
       </main>

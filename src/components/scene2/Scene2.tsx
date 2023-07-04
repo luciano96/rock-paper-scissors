@@ -26,7 +26,7 @@ const Scene2: FC<PropTypes> = ({ gameKey, getNextScene, setHouseMove }) => {
   return (
     <div
       id="scene2"
-      className="flex h-full w-full justify-center gap-40 [--key-margin-right:0px]"
+      className="flex h-full w-full justify-center gap-5 desktop:gap-40 [--key-margin-right:0px]"
     >
       <div className="gamekey_container">
         <PlayerMove gameKey={gameKey} />

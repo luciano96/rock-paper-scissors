@@ -13,10 +13,17 @@ const PlayAgainButton = ({
   resetMoves: () => void;
   isWin: boolean;
 }) => {
-  const className = clsx("min-h-[2rem]", "w-full", "rounded-md", "bg-white", {
-    "text-primary-rock-700": !isWin,
-    "text-dark-text": isWin,
-  });
+  const className = clsx(
+    "min-h-[4rem]",
+    "desktop:min-h-[2rem]",
+    "w-full",
+    "rounded-md",
+    "bg-white",
+    {
+      "text-primary-rock-700": !isWin,
+      "text-dark-text": isWin,
+    }
+  );
 
   const handler = () => {
     getNextScene();
@@ -51,20 +58,23 @@ const Scene3: FC<PropTypes> = ({
   return (
     <div
       id="scene3"
-      className="relative z-10 flex w-full justify-center gap-10 [--key-margin-right:0px]"
+      className="relative z-10 grid w-full grid-cols-2 grid-rows-2 flex-wrap justify-center justify-items-center 
+      gap-6 [--key-margin-right:0px] desktop:flex desktop:flex-nowrap desktop:gap-10"
     >
-      <div className="gamekey_container">
+      <div className="gamekey_container order-1">
         <PlayerMove gameKey={playerMove} isWin={winCondition} />
       </div>
-      <div className="flex min-w-[150px] flex-col gap-6 self-center">
-        <p className="text-center text-5xl text-gray-50">{result}</p>
+      <div className="order-3 col-span-2  flex min-w-[150px] flex-col gap-6 self-center desktop:order-2">
+        <p className="text-center text-7xl text-gray-50 desktop:text-5xl">
+          {result}
+        </p>
         <PlayAgainButton
           getNextScene={getNextScene}
           isWin={winCondition}
           resetMoves={resetMoves}
         />
       </div>
-      <div className="gamekey_container">
+      <div className="gamekey_container order-2 desktop:order-3">
         <HouseMove gameKey={houseMove} isWin={loseCondition} />
       </div>
     </div>
