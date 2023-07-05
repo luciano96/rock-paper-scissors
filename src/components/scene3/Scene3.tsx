@@ -65,7 +65,7 @@ const Scene3: FC<PropTypes> = ({
         <PlayerMove gameKey={playerMove} isWin={winCondition} />
       </div>
       <div className="order-3 col-span-2  flex min-w-[150px] flex-col gap-6 self-center desktop:order-2">
-        <p className="text-center text-7xl text-gray-50 desktop:text-5xl">
+        <p data-cy="game-result" className="text-center text-7xl text-gray-50 desktop:text-5xl">
           {result}
         </p>
         <PlayAgainButton

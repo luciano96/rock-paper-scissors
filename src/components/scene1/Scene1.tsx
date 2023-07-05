@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import GameKey from "../game-key/GameKey";
-import type { CommonSceneProps } from "../scene-rendered/SceneRendered.types";
+import type { CommonSceneProps } from "../scene-renderer/SceneRenderer.types";
 import type { MoveType } from "../game-key/GameKey.types";
 
 /**

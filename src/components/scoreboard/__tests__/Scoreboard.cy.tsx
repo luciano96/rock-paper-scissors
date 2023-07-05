@@ -1,6 +1,4 @@
 import Scoreboard from "../ScoreBoard";
-
-import "~/styles/globals.css";
 import ScoreContextProvider from "~/contexts/score";
 
 describe("<Scoreboard />", () => {

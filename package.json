@@ -12,6 +12,7 @@
     "e2e:headless": "NODE_ENV=test start-server-and-test dev http://localhost:3000 \"cypress run --e2e\"",
     "component": "NODE_ENV=test cypress open --component",
     "component:headless": "NODE_ENV=test cypress run --component",
+    "test": "yarn e2e:headless && yarn component:headless",
     "reinstall": "rimraf node_modules && yarn install"
   },
   "dependencies": {

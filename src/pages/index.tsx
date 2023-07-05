@@ -1,6 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import SceneRendered from "~/components/scene-rendered/SceneRendered";
+import SceneRenderer from "~/components/scene-renderer/SceneRenderer";
 import ScoreBoard from "~/components/scoreboard";
 
 const Home: NextPage = () => {
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
        gap-20 overflow-x-hidden bg-gradient-radial from-background-50 to-background-900 py-10 px-5 desktop:gap-56 desktop:px-14 desktop:py-10"
       >
         <ScoreBoard />
-        <SceneRendered />
+        <SceneRenderer />
       </main>
     </>
   );
