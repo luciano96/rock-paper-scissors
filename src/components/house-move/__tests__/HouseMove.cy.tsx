@@ -1,11 +1,15 @@
-import HouseMove from '../HouseMove';
+import HouseMove from "../HouseMove";
 
-import '~/styles/globals.css';
-import 'tailwindcss/dist/tailwind.min.css'
+describe("HouseMove Component", () => {
+  it("should render 'House is Picking' if no gameKey provided", () => {
+    cy.mount(<HouseMove gameKey={null} />);
+    cy.get("p").should("contains.text", "HOUSE IS PICKING");
+    cy.get(".skeleton").should("exist");
+  });
 
-describe('<HouseMove />', () => {
-  it('should render correctly', () => {
-    cy.mount(<HouseMove>Click me!</HouseMove>)
-    cy.get('div').should('contains.text', 'Hello HouseMove')
+  it("should render 'THE HOUSE PICKED' if no gameKey provided", () => {
+    cy.mount(<HouseMove gameKey="scissors" />);
+    cy.get("p").should("contains.text", "THE HOUSE PICKED");
+    cy.get(".scissors").should("exist");
   });
 });

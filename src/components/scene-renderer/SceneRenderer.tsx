@@ -17,7 +17,7 @@ import useGameResultCalculator, {
  * <SceneRendered />
  * ```
  */
-const SceneRendered: FC = () => {
+const SceneRenderer: FC = () => {
   const { getNextScene, scene } = useSceneSwitcher();
   const { calculateResult } = useGameResultCalculator();
   const [playerMove, setPlayerMove] = useState<MoveType | null>(null);
@@ -68,4 +68,4 @@ const SceneRendered: FC = () => {
   return <SceneToRender />;
 };
 
-export default SceneRendered;
+export default SceneRenderer;
